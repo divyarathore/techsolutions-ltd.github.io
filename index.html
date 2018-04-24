@@ -1,0 +1,1086 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="images/favicon.ico" rel="icon" type="image/ico" />
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">wscat</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#api-basics" class="toc-h1 toc-link" data-title="api-basics">API Basics</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#example-call" class="toc-h2 toc-link" data-title="example-call">Example call</a>
+                  </li>
+                  <li>
+                    <a href="#response-format" class="toc-h2 toc-link" data-title="response-format">Response format</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#requesting-api-access" class="toc-h1 toc-link" data-title="requesting-api-access">Requesting API access</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#login" class="toc-h2 toc-link" data-title="login">Login</a>
+                  </li>
+                  <li>
+                    <a href="#requesting-access-to-an-api" class="toc-h2 toc-link" data-title="requesting-access-to-an-api">Requesting Access to an API</a>
+                  </li>
+                  <li>
+                    <a href="#obtain-the-api-identifier" class="toc-h2 toc-link" data-title="obtain-the-api-identifier">Obtain the API identifier</a>
+                  </li>
+                  <li>
+                    <a href="#call-methods-of-a-specific-api-by-providing-the-identifier" class="toc-h2 toc-link" data-title="call-methods-of-a-specific-api-by-providing-the-identifier">Call methods of a specific API by providing the identifier</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#database-notifications" class="toc-h1 toc-link" data-title="database-notifications">Database Notifications</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#available-subscriptions" class="toc-h2 toc-link" data-title="available-subscriptions">Available subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#subscription-format" class="toc-h2 toc-link" data-title="subscription-format">Subscription Format</a>
+                  </li>
+                  <li>
+                    <a href="#example-session" class="toc-h2 toc-link" data-title="example-session">Example Session</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#database-api" class="toc-h1 toc-link" data-title="database-api">Database API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#objects" class="toc-h2 toc-link" data-title="objects">Objects</a>
+                  </li>
+                  <li>
+                    <a href="#subscriptions" class="toc-h2 toc-link" data-title="subscriptions">Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#blocks-and-transactions" class="toc-h2 toc-link" data-title="blocks-and-transactions">Blocks and Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#globals" class="toc-h2 toc-link" data-title="globals">Globals</a>
+                  </li>
+                  <li>
+                    <a href="#keys" class="toc-h2 toc-link" data-title="keys">Keys</a>
+                  </li>
+                  <li>
+                    <a href="#accounts" class="toc-h2 toc-link" data-title="accounts">Accounts</a>
+                  </li>
+                  <li>
+                    <a href="#balances" class="toc-h2 toc-link" data-title="balances">Balances</a>
+                  </li>
+                  <li>
+                    <a href="#reward-queue" class="toc-h2 toc-link" data-title="reward-queue">Reward Queue</a>
+                  </li>
+                  <li>
+                    <a href="#requests" class="toc-h2 toc-link" data-title="requests">Requests</a>
+                  </li>
+                  <li>
+                    <a href="#assets" class="toc-h2 toc-link" data-title="assets">Assets</a>
+                  </li>
+                  <li>
+                    <a href="#markets-feeds" class="toc-h2 toc-link" data-title="markets-feeds">Markets / Feeds</a>
+                  </li>
+                  <li>
+                    <a href="#witnesses" class="toc-h2 toc-link" data-title="witnesses">Witnesses</a>
+                  </li>
+                  <li>
+                    <a href="#committee-members" class="toc-h2 toc-link" data-title="committee-members">Committee members</a>
+                  </li>
+                  <li>
+                    <a href="#workers" class="toc-h2 toc-link" data-title="workers">Workers</a>
+                  </li>
+                  <li>
+                    <a href="#votes" class="toc-h2 toc-link" data-title="votes">Votes</a>
+                  </li>
+                  <li>
+                    <a href="#authority-validation" class="toc-h2 toc-link" data-title="authority-validation">Authority / Validation</a>
+                  </li>
+                  <li>
+                    <a href="#proposed-transactions" class="toc-h2 toc-link" data-title="proposed-transactions">Proposed Transactions</a>
+                  </li>
+                  <li>
+                    <a href="#blinded-balances" class="toc-h2 toc-link" data-title="blinded-balances">Blinded Balances</a>
+                  </li>
+                  <li>
+                    <a href="#licenses" class="toc-h2 toc-link" data-title="licenses">Licenses</a>
+                  </li>
+              </ul>
+          </li>
+      </div>
+        <ul class="toc-footer">
+            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the DasCoin Blockchain API Documentation. </p>
+
+<p>The DasCoin Blockchain API provides a simple way to retrieve relevant information from the DasCoin Blockchain in real time.<br>
+You can view code examples in the dark area on the right side of your screen, and related technical information and explanations in the light area on the left side of your screen. </p>
+
+<p>This documentation is a work in progress and is updated on a regular basis.</p>
+
+<p>For WSCat commands the following applies:</p>
+
+<table><thead>
+<tr>
+<th>Identifier</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>&gt;</strong></td>
+<td>Input command</td>
+</tr>
+<tr>
+<td><strong>&lt;</strong></td>
+<td>Result (Output)</td>
+</tr>
+</tbody></table>
+<h1 id='api-basics'>API Basics</h1>
+<p>Examples in this section assume that you have a full node running and listening to port 9880, locally.
+The following will show the usage of websocket connections. We make use of the wscat application available via npm:</p>
+
+<p><code>npm install -g wscat</code></p>
+<h2 id='example-call'>Example call</h2><pre class="highlight shell tab-shell"><code>wscat -c ws://127.0.0.1:9880
+</code></pre><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="w"> </span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s2">"get_accounts"</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="s2">"1.2.0"</span><span class="p">]]]}</span><span class="w">
+</span></code></pre>
+<p>A non-restricted call against a full-node</p>
+<h2 id='response-format'>Response format</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w">  </span><span class="err">..data..</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>A successful response with a non-zero ID and a response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ssid"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="err">error-code</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">" .. name of exception .."</span><span class="w">
+      </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">" .. message of exception .."</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"stack"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="err">stack</span><span class="w"> </span><span class="err">trace</span><span class="w"> </span><span class="err">..</span><span class="w"> </span><span class="p">],</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>In case of an error ID will be 0 with an error attribute and a detailed error description</p>
+</blockquote>
+
+<p>The API will return a JSON formatted response carrying the same id as the request to distinguish subsequent calls.</p>
+<h1 id='requesting-api-access'>Requesting API access</h1>
+<p>The DasCoin full node offers a wide range of APIs that can be accessed via websockets. The procedure works as follows:</p>
+
+<ol>
+<li>Login to the Full Node</li>
+<li>Request access to an API</li>
+<li>Obtain the API identifier</li>
+<li>Call methods of a specific API by providing the identifier</li>
+</ol>
+
+<p>List of available APIs:</p>
+
+<ul>
+<li><a href="#">Database API</a></li>
+<li><a href="#">Account History API</a></li>
+<li><a href="#">Network Broadcast API</a></li>
+<li><a href="#">Network Nodes API</a></li>
+</ul>
+<h2 id='login'>Login</h2><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="w"> </span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"login"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">""</span><span class="p">,</span><span class="s2">""</span><span class="p">]]}</span><span class="w">
+</span><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"result"</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The first thing we need to do is to login:</p>
+
+<p>If you have restricted access then you may be required to put your <strong>username</strong> and <strong>password</strong> into the quotes, accordingly. </p>
+
+<p>Furthermore, you should verify, that the result give positive confirmation about your login</p>
+<h2 id='requesting-access-to-an-api'>Requesting Access to an API</h2><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="w"> </span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"database"</span><span class="p">,[]]}</span><span class="w">
+</span></code></pre>
+<p>Most data can be queried from the <a href="#">Database API</a> to which we register with the following call</p>
+<h2 id='obtain-the-api-identifier'>Obtain the API identifier</h2><pre class="highlight json tab-json"><code><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"result"</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Result will be our identifier for the Database API - <strong>DATABASE_API_ID</strong></p>
+</blockquote>
+
+<p>After requesting access, the full node will either deny access or return an identifier to be used in future calls:</p>
+
+<aside class="notice">
+Remember the aforementioned identified will be called <code>DATABASE_API_ID</code> in the following examples
+</aside>
+<h2 id='call-methods-of-a-specific-api-by-providing-the-identifier'>Call methods of a specific API by providing the identifier</h2><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="w"> </span><span class="s2">"params"</span><span class="p">:[</span><span class="err">DATABASE_API_ID</span><span class="p">,</span><span class="s2">"get_accounts"</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="s2">"1.2.0"</span><span class="p">]]]}</span><span class="w">
+</span></code></pre>
+<p>Now we can call any methods available to the database API via:</p>
+<h1 id='database-notifications'>Database Notifications</h1>
+<p>In DasCoin, the websocket connection is used for notifications when objects in the database change or a particular event (such as filled orders) occur.</p>
+<h2 id='available-subscriptions'>Available subscriptions</h2><h3 id='set_subscribe_callback'>set_subscribe_callback</h3><pre class="highlight cpp tab-cpp"><code><span class="n">set_subscribe_callback</span><span class="p">(</span> <span class="kt">int</span> <span class="n">identifier</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">clear_filter</span> <span class="p">)</span>
+</code></pre>
+<p>To simplify development a global subscription callback can be registered. Every notification initiated by the full node will carry a particular id as defined by the user with the <strong>identifier</strong> parameter</p>
+<h3 id='set_pending_transaction_callback'>set_pending_transaction_callback</h3><pre class="highlight cpp tab-cpp"><code><span class="n">set_pending_transaction_callback</span><span class="p">(</span><span class="kt">int</span> <span class="n">identifier</span><span class="p">)</span>
+</code></pre>
+<p>Notifications for incoming unconfirmed transactions.</p>
+<h3 id='set_block_applied_callback'>set_block_applied_callback</h3><pre class="highlight cpp tab-cpp"><code><span class="n">set_block_applied_callback</span><span class="p">(</span><span class="n">blockid</span><span class="p">)</span>
+</code></pre>
+<p>Gives a notification whenever the block <strong>blockid</strong> is applied to the blockchain.</p>
+<h3 id='subscribe_to_market'>subscribe_to_market</h3><pre class="highlight cpp tab-cpp"><code><span class="n">subscribe_to_market</span><span class="p">(</span><span class="kt">int</span> <span class="n">identifier</span><span class="p">,</span> <span class="n">asset_id</span> <span class="n">a</span><span class="p">,</span> <span class="n">asset_id</span> <span class="n">b</span><span class="p">))</span>
+</code></pre>
+<p>Subscribes to market changes in market <strong>a:b</strong> and sends notifications with id identifier.</p>
+<h3 id='get_full_accounts'>get_full_accounts</h3><pre class="highlight cpp tab-cpp"><code><span class="n">get_full_accounts</span><span class="p">(</span><span class="n">array</span> <span class="n">account_ids</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">subscribe</span><span class="p">)</span>
+</code></pre>
+<p>Returns the full account object for the accounts in array <strong>account_ids</strong> and subscribes to changed to that account if subscribe is set to True.</p>
+<h2 id='subscription-format'>Subscription Format</h2><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="s2">"params"</span><span class="p">:[</span><span class="err">DATABASE_API_ID</span><span class="p">,</span><span class="s2">"set_subscribe_callback"</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="err">SUBSCRIPTION_ID</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">]]}</span><span class="w">
+</span><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notice"</span><span class="w">
+    </span><span class="s2">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="err">SUBSCRIPTION_ID</span><span class="p">,</span><span class="w">
+      </span><span class="p">[[</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.1.0"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="w">  </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">  </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">  </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w"> </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="err">...</span><span class="w">  </span><span class="p">}</span><span class="w">
+      </span><span class="p">]]</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This call above will register <strong>SUBSCRIPTION_ID</strong> as an id for notifications.</p>
+
+<p>Now, whenever you get an object from the witness (e.g. via <strong>get_objects</strong>) you will automatically subscribe to any future changes of that object. After calling <strong>set_subscribe_callback</strong> the witness will start to send notices every time the object changes</p>
+<h2 id='example-session'>Example Session</h2><pre class="highlight json tab-json"><code><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="s2">"login"</span><span class="p">,[</span><span class="s2">""</span><span class="p">,</span><span class="s2">""</span><span class="p">]]}</span><span class="w">
+</span><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">"result"</span><span class="p">:</span><span class="kc">true</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="s2">"database"</span><span class="p">,[]]}</span><span class="w">
+</span><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="s2">"result"</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span><span class="s2">"history"</span><span class="p">,[]]}</span><span class="w">
+</span><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="s2">"result"</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="s2">"set_subscribe_callback"</span><span class="p">,[</span><span class="mi">5</span><span class="p">,</span><span class="kc">false</span><span class="p">]]}</span><span class="w">
+</span><span class="err">&lt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="s2">"result"</span><span class="p">:</span><span class="kc">null</span><span class="p">}</span><span class="w">
+</span><span class="err">&gt;</span><span class="w"> </span><span class="p">{</span><span class="s2">"id"</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span><span class="s2">"method"</span><span class="p">:</span><span class="s2">"call"</span><span class="p">,</span><span class="s2">"params"</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="s2">"get_objects"</span><span class="p">,[[</span><span class="s2">"2.1.0"</span><span class="p">]]]}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Plenty of data coming in from this point on</p>
+</blockquote>
+
+<p>Here is an example of a full session</p>
+<h1 id='database-api'>Database API</h1>
+<p>The database API is available from the full node via websockets. If you have not set up your websockets connection, please read the <a href="#api-basics">basics</a></p>
+<h2 id='objects'>Objects</h2><h3 id='get_objects'>get_objects</h3><pre class="highlight cpp tab-cpp"><code><span class="n">fc</span><span class="o">::</span><span class="n">variants</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_objects</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">object_id_type</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">ids</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get the objects corresponding to the provided IDs. If any of the provided IDs does not map to an object, a null variant is returned in its position.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">ids</span>: IDs of the objects to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>The objects retrieved, in the order they are mentioned in ids</li>
+</ul>
+<h2 id='subscriptions'>Subscriptions</h2><h3 id='set_subscribe_callback'>set_subscribe_callback</h3><pre class="highlight cpp tab-cpp"><code><span class="kt">void</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">set_subscribe_callback</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">variant</span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">cb</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">notify_remove_create</span><span class="p">)</span>
+
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='set_pending_transaction_callback'>set_pending_transaction_callback</h3><pre class="highlight cpp tab-cpp"><code><span class="kt">void</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">set_pending_transaction_callback</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">variant</span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">cb</span><span class="p">)</span>
+
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='set_block_applied_callback'>set_block_applied_callback</h3><pre class="highlight cpp tab-cpp"><code><span class="kt">void</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">set_block_applied_callback</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="k">const</span> <span class="n">variant</span> <span class="o">&amp;</span><span class="n">block_id</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">cb</span><span class="p">)</span>
+
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='cancel_all_subscriptions'>cancel_all_subscriptions</h3><pre class="highlight cpp tab-cpp"><code><span class="kt">void</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">cancel_all_subscriptions</span><span class="p">()</span>
+
+</code></pre>
+<p>Stop receiving any notifications.
+This unsubscribes from all subscribed markets and objects.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h2 id='blocks-and-transactions'>Blocks and Transactions</h2><h3 id='get_block_header'>get_block_header</h3><pre class="highlight cpp tab-cpp"><code><span class="n">optional</span><span class="o">&lt;</span><span class="n">block_header</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_block_header</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">block_num</span><span class="p">)</span> <span class="k">const</span>
+
+</code></pre>
+<p>Retrieve a block header.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">block_num</span>: Height of the block whose header should be returned</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Header of the referenced block, or null if no matching block was found</li>
+</ul>
+<h3 id='get_block'>get_block</h3><pre class="highlight cpp tab-cpp"><code><span class="n">optional</span><span class="o">&lt;</span><span class="n">signed_block</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_block</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">block_num</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Retrieve a full, signed block.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">block_num</span>: Height of the block to be returned</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>The referenced block, or null if no matching block was found</li>
+</ul>
+<h3 id='get_blocks'>get_blocks</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span> <span class="n">signed_block_with_num</span> <span class="o">&gt;</span>     <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_blocks</span> <span class="p">(</span><span class="kt">uint32_t</span> <span class="n">start_block_num</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">start_block_num</span>: Height of the block to be returned</li>
+<li><span style="color:#990000">count</span>: Number of blocks to return</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>An array of full, signed blocks starting from a specified height.</li>
+</ul>
+<h3 id='get_blocks_with_virtual_operations'>get_blocks_with_virtual_operations</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span> <span class="n">signed_block_with_virtual_operations_and_num</span> <span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_blocks_with_virtual_operations</span> <span class="p">(</span>
+                                                                                                                    <span class="kt">uint32_t</span> <span class="n">start_block_num</span><span class="p">,</span>
+                                                                                                                    <span class="kt">uint32_t</span> <span class="n">count</span><span class="p">,</span> 
+                                                                                                                    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="kt">uint16_t</span> <span class="o">&gt;</span> <span class="n">virtual_operation_ids</span>
+                                                                                                                <span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Return an array of full, signed blocks that contains virtual operations starting from a specified height.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">start_block_num</span>: Height of the starting block.</li>
+<li><span style="color:#990000">count</span>: Number of blocks to return</li>
+<li><span style="color:#990000">virtual_operation_ids</span>: Array of virtual operation ids that should be included in result returned</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Array of enumerated blocks</li>
+</ul>
+<h3 id='get_transaction'>get_transaction</h3><pre class="highlight cpp tab-cpp"><code><span class="n">processed_transaction</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_transaction</span><span class="p">(</span><span class="kt">uint32_t</span> <span class="n">block_num</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">trx_in_block</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Used to fetch an individual transaction.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_recent_transaction_by_id'>get_recent_transaction_by_id</h3><pre class="highlight cpp tab-cpp"><code><span class="n">optional</span><span class="o">&lt;</span><span class="n">signed_transaction</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_recent_transaction_by_id</span><span class="p">(</span><span class="k">const</span> <span class="n">transaction_id_type</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>If the transaction has not expired, this method will return the transaction for the given ID or it will return NULL if it is not known. Just because it is not known does not mean it wasn&#39;t included in the blockchain.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h2 id='globals'>Globals</h2><h3 id='get_chain_properties'>get_chain_properties</h3><pre class="highlight cpp tab-cpp"><code><span class="n">chain_property_object</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_chain_properties</span><span class="p">()</span> <span class="k">const</span>
+</code></pre>
+<p>Retrieve the chain_property_object associated with the chain.</p>
+
+<p><strong>Parameters:</strong> </p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_global_properties'>get_global_properties</h3><pre class="highlight cpp tab-cpp"><code><span class="n">global_property_object</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_global_properties</span><span class="p">()</span> <span class="k">const</span>
+</code></pre>
+<p>Retrieve the current global_property_object.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_config'>get_config</h3><pre class="highlight cpp tab-cpp"><code><span class="n">fc</span><span class="o">::</span><span class="n">variant_object</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_config</span><span class="p">()</span> <span class="k">const</span>
+</code></pre>
+<p>Retrieve compile-time constants.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_chain_id'>get_chain_id</h3><pre class="highlight cpp tab-cpp"><code><span class="n">chain_id_type</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_chain_id</span><span class="p">()</span> <span class="k">const</span>
+</code></pre>
+<p>Get the chain ID.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_dynamic_global_properties'>get_dynamic_global_properties</h3><pre class="highlight cpp tab-cpp"><code><span class="n">dynamic_global_property_object</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_dynamic_global_properties</span><span class="p">()</span> <span class="k">const</span>
+</code></pre>
+<p>Retrieve the current dynamic_global_property_object.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h2 id='keys'>Keys</h2><h3 id='get_key_references'>get_key_references</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span> <span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_key_references</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">public_key_type</span><span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h2 id='accounts'>Accounts</h2><h3 id='get_accounts'>get_accounts</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">account_object</span><span class="o">&gt;&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_accounts</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">account_ids</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get a list of accounts by ID. This function has semantics identical to get_objects.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">account_ids</span>: IDs of the accounts to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>The accounts corresponding to the provided IDs</li>
+</ul>
+<h3 id='get_full_accounts'>get_full_accounts</h3><pre class="highlight cpp tab-cpp"><code><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">full_account</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_full_accounts</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">names_or_ids</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">subscribe</span><span class="p">)</span>
+</code></pre>
+<p>Fetch all objects relevant to the specified accounts and subscribe to updates.</p>
+
+<p>This function fetches all relevant objects for the given accounts, and subscribes to updates to the given accounts.</p>
+
+<p>If any of the strings in <strong>names_or_ids cannot</strong> be tied to an account, that input will be ignored. All other accounts will be retrieved and subscribed.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">callback</span>: Function to call with updates</li>
+<li><span style="color:#990000">names_or_ids</span>: Each item must be the name or ID of an account to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Map of string from <strong>names_or_ids</strong> to the corresponding account</li>
+</ul>
+<h3 id='get_account_by_name'>get_account_by_name</h3><pre class="highlight cpp tab-cpp"><code><span class="n">optional</span><span class="o">&lt;</span><span class="n">account_object</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_account_by_name</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">name</span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_account_references'>get_account_references</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_account_references</span><span class="p">(</span><span class="n">account_id_type</span> <span class="n">account_id</span><span class="p">)</span> <span class="n">cons</span>
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">account_id</span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>all accounts that refer to the key or account id in their owner or active authorities.</li>
+</ul>
+<h3 id='lookup_account_names'>lookup_account_names</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">account_object</span><span class="o">&gt;&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">lookup_account_names</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">account_names</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get a list of accounts by name. This function has semantics identical to get_objects.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">account_names</span>: Names of the accounts to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>The accounts holding the provided names</li>
+</ul>
+<h3 id='lookup_accounts'>lookup_accounts</h3><pre class="highlight cpp tab-cpp"><code><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="n">account_id_type</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">lookup_accounts</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="o">&amp;</span><span class="n">lower_bound_name</span><span class="p">,</span> <span class="kt">uint32_t</span> <span class="n">limit</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get names and IDs for registered accounts.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">lower_bound_name</span>: Lower bound of the first name to return</li>
+<li><span style="color:#990000">limit</span>: Maximum number of results to return must not exceed 1000</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Map of account names to corresponding IDs</li>
+</ul>
+<h3 id='get_account_count'>get_account_count</h3><pre class="highlight cpp tab-cpp"><code><span class="kt">uint64_t</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_account_count</span><span class="p">()</span> <span class="k">const</span>
+</code></pre>
+<p>Get the total number of accounts registered with the blockchain.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_vault_info'>get_vault_info</h3><pre class="highlight cpp tab-cpp"><code><span class="n">optional</span><span class="o">&lt;</span> <span class="n">vault_info_res</span> <span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_vault_info</span><span class="p">(</span><span class="n">account_id_type</span> <span class="n">vault_id</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get vault information.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">vault_id</span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>vault_info_res (optional)</li>
+</ul>
+<h3 id='get_vaults_info'>get_vaults_info</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span> <span class="n">acc_id_vault_info_res</span> <span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_vaults_info</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span> <span class="n">vault_ids</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get vault information for a list of vaults.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">vault_ids</span>: A list of vault IDs.</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>A JSON object containing a vault id and optional vault information (if vault exists).</li>
+</ul>
+<h2 id='balances'>Balances</h2><h3 id='get_account_balances'>get_account_balances</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">asset</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_account_balances</span><span class="p">(</span><span class="n">account_id_type</span> <span class="n">id</span><span class="p">,</span> <span class="k">const</span> <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">asset_id_type</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">assets</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get an account’s balances in various assets.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">id</span>: ID of the account to get balances for</li>
+<li><span style="color:#990000">assets</span>: IDs of the assets to get balances of; if empty, get all assets account has a balance in</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Balances of the account</li>
+</ul>
+<h3 id='get_named_account_balances'>get_named_account_balances</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">asset</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_named_account_balances</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span> <span class="k">const</span> <span class="n">flat_set</span><span class="o">&lt;</span><span class="n">asset_id_type</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">assets</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Semantically equivalent to get_account_balances, but takes a name instead of an ID.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">name</span>: Name of the account to get balances for</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Balances of the account</li>
+</ul>
+<h3 id='get_balance_objects'>get_balance_objects</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">balance_object</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_balance_objects</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">address</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">addrs</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>All unclaimed balance objects for a set of addresses</li>
+</ul>
+<h3 id='get_vested_balances'>get_vested_balances</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">asset</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_vested_balances</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">balance_id_type</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">objs</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000"></span>: </li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='get_vesting_balances'>get_vesting_balances</h3><pre class="highlight cpp tab-cpp"><code><span class="n">acc_id_share_t_res</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_free_cycle_balance</span><span class="p">(</span><span class="n">account_id_type</span> <span class="n">account_id</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get a free cycle amount for account</p>
+
+<p><strong>Parameters:</strong> </p>
+
+<ul>
+<li><span style="color:#990000">account_id</span>: account_ids ID of the account to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Number of issued free cycles on account</li>
+</ul>
+<h3 id='get_free_cycle_balance-deprecated'>get_free_cycle_balance (DEPRECATED)</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">acc_id_share_t_res</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_free_cycle_balances_for_accounts</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span> <span class="n">ids</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get remaining amount of cycles.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">ids</span>: Vector of account ids</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Number of issued free cycles on account</li>
+</ul>
+<h3 id='get_free_cycle_balances_for_accounts-deprecated'>get_free_cycle_balances_for_accounts (DEPRECATED)</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span><span class="n">acc_id_share_t_res</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_free_cycle_balances_for_accounts</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">account_id_type</span><span class="o">&gt;</span> <span class="n">ids</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get remaining amount of cycles.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">ids</span>: Vector of account ids</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Vector of objects containing account id and cycle balance</li>
+</ul>
+<h3 id='get_all_cycle_balances-deprecated'>get_all_cycle_balances (DEPRECATED)</h3><pre class="highlight cpp tab-cpp"><code><span class="n">acc_id_vec_cycle_agreement_res</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_all_cycle_balances</span><span class="p">(</span><span class="n">account_id_type</span> <span class="n">account_id</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get cycle amounts per cycle agreement for account</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">account_id</span>: ID of the account to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Vector of cycle amounts and frequency locks on account</li>
+</ul>
+<h3 id='get_all_cycle_balances_for_accounts-deprecated'>get_all_cycle_balances_for_accounts (DEPRECATED)</h3><pre class="highlight cpp tab-cpp"><code><span class="n">vector</span><span class="o">&lt;</span> <span class="n">acc_id_vec_cycle_agreement_res</span> <span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_all_cycle_balances_for_accounts</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">account_id_type</span> <span class="o">&gt;</span> <span class="n">ids</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get cycle balances for list of accounts.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">ids</span>: Vector of account ids</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>Vector of objects containing account id, cycle amount and frequency lock</li>
+</ul>
+<h3 id='purchase_cycle_asset'>purchase_cycle_asset</h3><pre class="highlight cpp tab-cpp"><code><span class="n">signed_transaction</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">purchase_cycle_asset</span><span class="p">(</span>
+                                                                <span class="n">string</span> <span class="n">account</span><span class="p">,</span> 
+                                                                <span class="n">string</span> <span class="n">amount_to_sell</span><span class="p">,</span> 
+                                                                <span class="n">string</span> <span class="n">symbol_to_sell</span><span class="p">,</span> 
+                                                                <span class="kt">double</span> <span class="n">frequency</span><span class="p">,</span> 
+                                                                <span class="kt">double</span> <span class="n">amount_of_cycles_to_receive</span><span class="p">,</span> 
+                                                                <span class="kt">bool</span> <span class="n">broadcast</span> <span class="o">=</span> <span class="nb">false</span>
+                                                            <span class="p">)</span>
+</code></pre>
+<p>Purchase cycles</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">account</span>: account name or id</li>
+<li><span style="color:#990000">amount_to_sell</span>: amount of asset to sell</li>
+<li><span style="color:#990000">symbol_to_sell</span>: symbol of asset to sell</li>
+<li><span style="color:#990000">frequency</span>: frequency at which we buy</li>
+<li><span style="color:#990000">amount_of_cycles_to_receive</span>: amount of cycles to receive by this buy</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li></li>
+</ul>
+<h3 id='calculate_cycle_price'>calculate_cycle_price</h3><pre class="highlight cpp tab-cpp"><code><span class="n">optional</span><span class="o">&lt;</span><span class="n">cycle_price</span><span class="o">&gt;</span> <span class="n">graphene</span><span class="o">::</span><span class="n">wallet</span><span class="o">::</span><span class="n">wallet_api</span><span class="o">::</span><span class="n">calculate_cycle_price</span><span class="p">(</span><span class="n">share_type</span> <span class="n">cycle_amount</span><span class="p">,</span> <span class="n">asset_id_type</span> <span class="n">asset_id</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Calculates and returns the amount of asset one needs to pay to get the given amount of cycles</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">cycle_amount</span>: Desired amount of cycles to get</li>
+<li><span style="color:#990000">asset_id_type</span>: Asset to pay</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>cycle_price structure (optional)</li>
+</ul>
+<h3 id='get_dascoin_balance'>get_dascoin_balance</h3><pre class="highlight cpp tab-cpp"><code><span class="n">acc_id_share_t_res</span> <span class="n">graphene</span><span class="o">::</span><span class="n">app</span><span class="o">::</span><span class="n">database_api</span><span class="o">::</span><span class="n">get_dascoin_balance</span><span class="p">(</span><span class="n">account_id_type</span> <span class="n">id</span><span class="p">)</span> <span class="k">const</span>
+</code></pre>
+<p>Get amount of DASCoin for on an account.</p>
+
+<p><strong>Parameters:</strong></p>
+
+<ul>
+<li><span style="color:#990000">id</span>: ID of the account to retrieve</li>
+</ul>
+
+<p><strong>Return:</strong></p>
+
+<ul>
+<li>An object containing id and balance of an account</li>
+</ul>
+<h2 id='reward-queue'>Reward Queue</h2><h2 id='requests'>Requests</h2><h2 id='assets'>Assets</h2><h2 id='markets-feeds'>Markets / Feeds</h2><h2 id='witnesses'>Witnesses</h2><h2 id='committee-members'>Committee members</h2><h2 id='workers'>Workers</h2><h2 id='votes'>Votes</h2><h2 id='authority-validation'>Authority / Validation</h2><h2 id='proposed-transactions'>Proposed Transactions</h2><h2 id='blinded-balances'>Blinded Balances</h2><h2 id='licenses'>Licenses</h2>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">wscat</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+<h1 id='database-api'>Database API</h1>
+<p>The database API is available from the full node via websockets. If you have not set up your websockets connection, please read the <a href="#api-basics">basics</a></p>
